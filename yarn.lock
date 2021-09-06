@@ -4155,6 +4155,11 @@
   "resolved" "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz"
   "version" "1.0.0"
 
+"demos-react-captcha@^1.0.11":
+  "integrity" "sha512-J0/uNNRVzk91hNGhSCh5zukcYWTGRDjtsgNgKzuK36JogZZNXdvbcUeSK9gxGGlDQ/LNcnV50kvrf60wGqbiUw=="
+  "resolved" "https://registry.npmjs.org/demos-react-captcha/-/demos-react-captcha-1.0.11.tgz"
+  "version" "1.0.11"
+
 "depd@~1.1.2":
   "integrity" "sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak="
   "resolved" "https://registry.npmjs.org/depd/-/depd-1.1.2.tgz"
