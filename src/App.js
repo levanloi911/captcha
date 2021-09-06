@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <ReCAPTCHA
-        sitekey="6LcO5UkcAAAAAIRasr3BSFzIx1OllvhNg-b9Gaf5"
+        sitekey="6Lf150kcAAAAADZGHcbcvjlozOYwY0eOoQge16Jy"
         onChange={onChange}
       />
     </div>
