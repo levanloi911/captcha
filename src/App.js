@@ -14,16 +14,16 @@ function App () {
       <div className="App">
           <ReCAPTCHA
             style={{ display: "inline-block" }}
-            // ref={this._reCaptchaRef}
+            // ref={reCaptchaRef}
             sitekey={TEST_SITE_KEY}
-            // onChange={this.handleChange}
-            // asyncScriptOnLoad={this.asyncScriptOnLoad}
+            // onChange={handleChange}
+            // asyncScriptOnLoad={asyncScriptOnLoad}
           />
         <Captcha
           style={{ display: "inline-block" }}
           onChange={onChange}
-          placeholder="Enter captcha" // optional
-          length={6} // defaultn
+          placeholder="Enter captcha"
+          length={6} 
         />
 
       </div>
