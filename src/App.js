@@ -1,37 +1,42 @@
-import React from "react";
-import ReCAPTCHA from "react-google-recaptcha";
-import Captcha from "demos-react-captcha";
 import './App.css'
-const TEST_SITE_KEY = "6Lcg-EkcAAAAAIec-J_yxziH3okfLvqbYlkICNQT";
-const DELAY = 1500;
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+  GoogleReCaptcha
+} from "react-google-recaptcha-v3";
+import { useCallback } from 'react';
+const TEST_SITE_KEY = "6Ld2yEocAAAAANcNuNcuhOf-qqRTBuPBgjd6aLJD";
 
-function App () {
- 
-  function onChange(value) {
-    console.log('inputcaptcha:',value);
-  }
-    return (
-      <div className="App">
-          <ReCAPTCHA
-            style={{ display: "inline-block" }}
-            // ref={reCaptchaRef}
-            sitekey={TEST_SITE_KEY}
-            // onChange={handleChange}
-            // asyncScriptOnLoad={asyncScriptOnLoad}
-          />
-        <Captcha
-          style={{ display: "inline-block" }}
-          onChange={onChange}
-          placeholder="Enter captcha"
-          length={6} 
-        />
+const ReComponent = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const handleSubmit = useCallback(async () => {
+    if (!executeRecaptcha) {
+      console.log('Execute recaptcha not yet available');
+    }
+    console.log('Execute recaptcha sucess');
+    const token = await executeRecaptcha();
+    // Do whatever you want with the token
+    console.log(token);
+  }, []);
 
-      </div>
-    );
-  
-}
+  return (
+    <div>
+      <GoogleReCaptcha onVerify={token => console.log({ token })} />
+      <button onClick={handleSubmit}>Submit</button>
+    </div>
+  );
+};
 
-
-
+const App = () => {
+  return (
+    <GoogleReCaptchaProvider
+      language="es-AR"
+      reCaptchaKey={TEST_SITE_KEY}
+    >
+      <ReComponent />
+    </GoogleReCaptchaProvider>
+  );
+};
 
 export default App;
+
